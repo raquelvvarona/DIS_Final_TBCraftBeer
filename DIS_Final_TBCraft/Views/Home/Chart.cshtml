@@ -1,0 +1,134 @@
+﻿@{
+    ViewData["Title"] = "Beer Data";
+    Layout = "_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart1);
+      google.charts.setOnLoadCallback(drawChart2);
+
+      function drawChart1() {
+        var data = google.visualization.arrayToDataTable([
+          ['Category',  'IBUs', 'ABV%'],
+          ['Lite Lager', 10.1, 3.5],
+          ['American Wheat', 20, 5],
+          ['Oktoberfest', 24, 5.7],
+          ['Brown Porter', 24.75, 6],
+          ['Pale Ale', 40, 5],
+          ['Stout', 50, 6],
+          ['IPA', 60, 5],
+          ['Barley Wine', 65, 10],
+        ]);
+
+        var options = {
+          title: 'Comparison of Craft Beer Styles',
+          vAxis: {title: 'IBUs'},
+          xAxis: {title: 'ABV%'},
+          backgroundColor: '#ddd',
+          isStacked: true
+        };
+        var chart = new google.visualization.SteppedAreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      };
+  function drawChart2() {
+
+    var data = google.visualization.arrayToDataTable([
+      ['Cost Item','Allocation'],
+      ['Malt', 5],
+      ['Hops', 4],
+      ['Packaging',  13],
+      ['Labor', 1],
+      ['Brewer Margin', 8],
+      ['Shipping', 6],
+      ['Federal Tax', 1],
+      ['State Tax', 1],
+      ['Loss', 2],
+      ['Distributor Margin', 8],
+      ['Retailer Margin', 31],
+      ['Sales Tax', 7]
+    ]);
+    // data.addColumn('string', 'Cost');
+    // data.addColumn('number','Allocation');
+    // data.addRows({
+
+
+
+
+    var options = {
+      title: 'Craft Beer Cost Allocaiton Percentages',
+      backgroundColor: '#ddd'
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+    chart.draw(data, options);
+  }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="g7-chartbanner w3-container w3-center" style="padding:60px 16px">
+        <h1 class="w3-margin w3-jumbo" style="color: blanchedalmond">Craft Beer Data</h1>
+    </header>
+
+    <!-- First Grid -->
+    <h4>><center>Alcohol by Volume% vs. International Bitterness Units</center></h4>
+    <div class="w3-container">
+        <div class="w3-content">
+            <div class="w3-half">
+                <br>
+                <h5>Alcohol By Volume % (ABV)</h5>
+                <p class="w3-text-grey">
+                    A measurement of the alcohol content in terms of the percentage
+                    volume of alcohol per volume of beer
+                </p>
+                <h5>International Bitterness Units (IBUs)</h5>
+                <p class="w3-text-grey">
+                    1 bitterness unit = 1 milligram of isomerized (exposed to heat) hop alpha acids in one liter of beer. Can range from 0 (lowest—no bitterness) to above 100 IBUs. Usually the general population cannot perceive bitterness
+                    above or below a specific range of IBUs (said to be below 8 and above 80 IBUs by some sources).
+                </p>
+                <br>
+                <p class="w3-text-grey">This chart compares ABV% to IBUs for some common craft beer types.</p>
+            </div>
+
+            <div class="w3-half">
+                <br>
+                <div id="chart_div" style="width: 600px; height: 335px;"></div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <!-- Second Grid -->
+    <h4>><center>Craft Beer - Where Does the Money Go?</center></h4>
+    <div class="w3-container">
+        <div class="w3-content">
+            <div class="w3-half">
+                <br>
+                <h5 class="w3-text-grey">
+                    It is no secret that craft beer is not for those on a tight budget.
+                    In fact, most might argue that craft beer is over priced. But for the quality, flavor, craftstmanship
+                    and pride taken in brewing each individual barrel of craft beer for you to enjoy, there are
+                    associated costs which make the experience wholly worth every penny!
+                </h5>
+                <h5>Let's take a look at where the money goes when purchasing a pint of craft beer.</h5>
+                <p class="w3-text-grey">
+                    This illustrates the breakdown of where the money goes for each pint of
+                    craft beer served
+                </p>
+            </div>
+
+            <div class="w3-half">
+                <br>
+                <div id="piechart" style="width: 600px; height: 335px;"></div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+        <h1 class="w3-margin w3-xlarge"><i>"He was a wise man who invented beer"</i> - Plato</h1>
+    </div>
+</body>
+</html>

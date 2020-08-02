@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "Tampa Bay Craft Beers";
+    Layout = "_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css\site.css">
+</head>
+
+<body>
+   
+    <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+        <h1 class="w3-margin g7-largebold">Did You Know?</h1>
+        <h2 class="w3-margin w3-xlarge">Florida's first commercial brewery, Florida Brewing, opened in Ybor City in 1896.</h2>
+    </div>
+    <!-- Header -->
+    <header class="g7-homebanner w3-container w3-center" style="padding:128px 16px">
+        <h1 class="w3-margin g7-jumbobold">Tampa Bay Craft Beer Guide</h1>
+        <p class="w3-xlarge">A pirate's treasure of suds.</p>
+         @Html.ActionLink("Let's Explore", "Breweries", "Home", new { @class = "w3-bar-item w3-button w3-padding-large" })
+    </header>
+
+    <!-- First Grid -->
+    <div class="w3-row-padding w3-padding-64 w3-container">
+        <div class="w3-content">
+            <div class="w3-twothird">
+                <h1>Welcome to the Gulp Coast</h1>
+                <h5 class="w3-padding-32">
+                    Here among the palm trees, the cities of Tampa Bay have a beer and a
+                    taproom that will suit a craft beer
+                    afficionado of any stripe.
+                </h5>
+
+                <p class="w3-text-grey">
+                    With over 80 breweries in the area, the Bay surpasses even some of the largest metropolitan areas across the nation when it comes to its choice
+                    of craft beers. Whether India Pale Ales, sour beers, blondes, or belgian ales are your thing, there is guaranteed to be a taproom, or several, that will make your trip worth it.
+                </p>
+            </div>
+
+            <div class="w3-third w3-center">
+                <img src="/img/baycrafted-beer.jpg">
+            </div>
+        </div>
+    </div>
+
+    <!-- Second Grid -->
+    <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+        <div class="w3-content">
+            <div>
+                <img src="/img/cigarcitybeers.jpg">
+            </div>
+
+            <div>
+                <h1>World Class</h1>
+                <h5 class="w3-padding-32">
+                    The breweries of Tampa Bay have been producing award-winning craft beers for decades.
+                    In a survey conducted by Ratebeer.com, respondents named three Tampa Bay breweries to its best in the world list.
+                </h5>
+
+                <p class="w3-text-grey">
+                    Local favorite Cigar City Brewing led the city by coming in at #5. Cigar City's popularity transcends the Bay with popular brews such as
+                    the Jai Alai IPA, Maduro brown ale, and Guayabera citra ale being distributed across the United States. Cycle Brewing, the highest-rated brewery in
+                    St. Petersburg, cracked the top 25 at #20. Bike-themed beers such as Crank and Fixie are a welcome refreshments for those touring the beautiful murals of the St. Pete downtown.
+                    Lastly, Angry Chair Brewing, located in the up-and-coming Seminole Heights neighborhood, made it in the list at #78.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

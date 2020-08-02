@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Beers";
+    Layout = "_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <!-- Header -->
+    <header class="g7-beersbanner w3-container w3-center" style="padding:60px 16px">
+        <h1 class="w3-margin w3-jumbo" style="color: blanchedalmond">Award Winning Bay Area Craft Beers</h1>
+    </header>
+
+    <!-- First Grid -->
+    <div class="w3-row-padding w3-padding-64 w3-container">
+        <div class="w3-content">
+            <div class="w3-twothird">
+                <h1>A perfect drink for a perfect latitude</h1>
+                <h5 class="w3-padding-32">
+                    The late English author Gilbert Chesterton once wrote: "Let a man walk 10 miles steadily on a hot summer's day along a dusty English road, and he will soon discover why beer was invented."
+                    It's a short step from a dusty English road to a beautiful Tampa Bay beach.
+                </h5>
+                <p class="w3-text-grey">The Gulp Coast is home to over 80 breweries producing well over a hundred locally crafted beers. There are bound to be several suited to quench every palate. A few of our favorites are:</p>
+                <ul class="a">
+                    <li>Jai Alai - Cigar City Brewing</li>
+                    <li>Maduro - Cigar City Brewing</li>
+                    <li>Free Dive - Coppertail Brewing Company</li>
+                    <li>Reef Donkey - Tampa Bay Brewing Company</li>
+                    <li>Beach Blonde Ale - 3 Daughters Brewing</li>
+                </ul>
+            </div>
+
+            <div class="w3-third w3-center g7-blackbackground">
+                <img src="/img/BeerBay.jpg" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Second Grid -->
+
+    <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+
+        <div class="w3-third w3-center">
+
+            <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
+        </div>
+
+        <div class="w3-twothird">
+            <img src="/img/BeerBay2.jpg" class="w3-left-align" />
+            <h1>Find Your Beer, Find Your Latitude</h1>
+            <h5 class="w3-padding-32">
+                Explore our local craft beers.  Where to find them, where to enjoy them with friends and food, and where you can buy them
+                to take a local taste of Tampa Bay area home with you.
+            </h5>
+
+            <p class="w3-text-grey">
+                Your a short step away from finding the best beers in the Bay.  Click "Find Your Beer" to explore our breweries, pubs,
+                and restaurants.
+            </p>
+            @Html.ActionLink("Find Your Beer Spot", "Breweries", "Home", new { @class = "w3-bar-item w3-button w3-padding-large" })
+
+        </div>
+    </div>
+</body>
+</html>
