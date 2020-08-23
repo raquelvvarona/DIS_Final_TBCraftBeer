@@ -14,6 +14,9 @@
     <None Include="wwwroot\img\baycrafted-logo.png" />
     <None Include="wwwroot\img\BeerBay.JPG" />
     <None Include="wwwroot\img\BeerBay2.JPG" />
+	<None Include="wwwroot\img\raquel.jpg" />
+	<None Include="wwwroot\img\austin.jfif" />
+    <None Include="wwwroot\img\shawn.jfif" />
     <None Include="wwwroot\img\blue-tampa.jpg" />
     <None Include="wwwroot\img\brewery-web-header.jpg" />
     <None Include="wwwroot\img\BrewPub1.PNG" />
@@ -35,7 +38,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.7" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.2.0" />
   </ItemGroup>
 
 </Project>

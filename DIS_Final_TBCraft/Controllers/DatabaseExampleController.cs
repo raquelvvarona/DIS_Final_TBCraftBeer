@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using DIS_Final_TBCraft.DataAccess;
 using DIS_Final_TBCraft.Models;
 
-namespace MVC_EF_Start.Controllers
+namespace DIS_Final_TBCraft.Controllers
 {
     public class DatabaseExampleController : Controller
     {
@@ -26,19 +26,19 @@ namespace MVC_EF_Start.Controllers
         public async Task<ViewResult> DatabaseOperations()
         {
             //CREATE tables
-            Beer Beer1 = new Beer();
+            Models.Beer Beer1 = new Models.Beer();
             Beer1.BeerId   =  1;
             Beer1.BeerName = "Cigar City Jai Alai";
             Beer1.BeerType = "IPA";
             Beer1.BeerABV  = "6.7%";
 
-            Beer Beer2 = new Beer();
+            Models.Beer Beer2 = new Models.Beer();
             Beer2.BeerId = 2;
             Beer2.BeerName = "Coppertail Free Dive";
             Beer2.BeerType = "IPA";
             Beer2.BeerABV  = "6.4%";
 
-            Beer Beer3 = new Beer();
+            Models.Beer Beer3 = new Models.Beer();
             Beer3.BeerId =  3;
             Beer3.BeerName = "Reef Donkey";
             Beer3.BeerType = "IPA";

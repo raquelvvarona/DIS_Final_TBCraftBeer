@@ -6,19 +6,23 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using DIS_Final_TBCraft.Models;
+using System.Net.Http;
+using Newtonsoft.Json;
 
 namespace DIS_Final_TBCraft.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        HttpClient httpClient;
 
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
+        static string BASE_URL = "https://api.openbrewerydb.org";
+        static string API_KEY = "";
 
         public IActionResult Index()
+        {
+            return View();
+        }
+        public IActionResult AboutUs()
         {
             return View();
         }
@@ -30,19 +34,47 @@ namespace DIS_Final_TBCraft.Controllers
         {
             return View();
         }
-        public IActionResult Chart()
+        public IActionResult Charts()
         {
             return View();
         }
-        public IActionResult Privacy()
+        public IActionResult ViewBrewApi()
         {
-            return View();
-        }
+            httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Accept.Clear();
+            httpClient.DefaultRequestHeaders.Add("X-Api-Key", API_KEY);
+            httpClient.DefaultRequestHeaders.Accept.Add(
+                new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            string BEER_API_PATH = BASE_URL + "/breweries?by_city=tampa";
+            string breweryapidata = "";
+
+            Breweryapis Breweryapi = null;
+
+            httpClient.BaseAddress = new Uri(BEER_API_PATH);
+
+            try
+            {
+                HttpResponseMessage response = httpClient.GetAsync(BEER_API_PATH).GetAwaiter().GetResult();
+
+                if (response.IsSuccessStatusCode)
+                {
+                    breweryapidata = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+                }
+
+                if (!breweryapidata.Equals(""))
+                {
+                    // JsonConvert is part of the NewtonSoft.Json Nuget package
+                    Breweryapi = JsonConvert.DeserializeObject<Models.Breweryapis>(breweryapidata);
+                }
+            }
+            catch (Exception e)
+            {
+                // This is a useful place to insert a breakpoint and observe the error message
+                Console.WriteLine(e.Message);
+            }
+
+            return View(Breweryapi);
         }
     }
 }

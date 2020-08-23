@@ -20,20 +20,22 @@
 <body>
     <!-- Navbar -->
     <div class="w3-top">
-        <div class="w3-bar w3-black w3-card w3-left-align w3-large">
-            <<a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-             <div>
-                 <table>
-                     <tr>
-                         <td>@Html.ActionLink("Home", "Index", "Home")</td> </tr>
-                     <tr>
-                         <td>@Html.ActionLink("Breweries", "Breweries", "Home")</td> </tr>
-                     <tr>
-                         <td>@Html.ActionLink("Beers", "Beers", "Home")</td> </tr>
-                     <tr>
-                         <td>@Html.ActionLink("Chart", "Chart", "Home")</td> </tr>
-             </table>
-             </div>
+        <div class="w3-bar w3-white w3-card w3-left-align w3-large">
+            <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+            <div>
+                <button>@Html.ActionLink("Home", "Index", "Home")</button>
+
+                <button>@Html.ActionLink("AboutUs", "AboutUs", "Home")</button>
+
+                <button>@Html.ActionLink("Breweries", "Breweries", "Home")</button>
+
+                <button>@Html.ActionLink("Beers", "Beers", "Home")</button>
+
+                <button>@Html.ActionLink("Charts", "Charts", "Home")</button>
+
+                <button>@Html.ActionLink("ViewBrewAPI", "ViewBrewAPI", "Home")</button>
+
+            </div>
             </div>
         </div>
     @RenderBody()

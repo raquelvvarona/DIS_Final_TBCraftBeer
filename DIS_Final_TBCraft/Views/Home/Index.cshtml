@@ -9,7 +9,7 @@
 </head>
 
 <body>
-   
+
     <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
         <h1 class="w3-margin g7-largebold">Did You Know?</h1>
         <h2 class="w3-margin w3-xlarge">Florida's first commercial brewery, Florida Brewing, opened in Ybor City in 1896.</h2>
@@ -18,34 +18,32 @@
     <header class="g7-homebanner w3-container w3-center" style="padding:128px 16px">
         <h1 class="w3-margin g7-jumbobold">Tampa Bay Craft Beer Guide</h1>
         <p class="w3-xlarge">A pirate's treasure of suds.</p>
-         @Html.ActionLink("Let's Explore", "Breweries", "Home", new { @class = "w3-bar-item w3-button w3-padding-large" })
+        @Html.ActionLink("Let's Explore", "Breweries", "Home", new { @class = "w3-bar-item w3-button w3-padding-large" })
     </header>
 
     <!-- First Grid -->
-    <div class="w3-row-padding w3-padding-64 w3-container">
+    <div class="w3-row-padding w3-light-grey w3-padding-48 w3-container">
         <div class="w3-content">
-            <div class="w3-twothird">
+            <div>
+                <img src="/img/BeerBay.jpg">
+            </div>
+
+            <div>
                 <h1>Welcome to the Gulp Coast</h1>
                 <h5 class="w3-padding-32">
                     Here among the palm trees, the cities of Tampa Bay have a beer and a
                     taproom that will suit a craft beer
                     afficionado of any stripe.
                 </h5>
-
                 <p class="w3-text-grey">
                     With over 80 breweries in the area, the Bay surpasses even some of the largest metropolitan areas across the nation when it comes to its choice
                     of craft beers. Whether India Pale Ales, sour beers, blondes, or belgian ales are your thing, there is guaranteed to be a taproom, or several, that will make your trip worth it.
                 </p>
             </div>
-
-            <div class="w3-third w3-center">
-                <img src="/img/baycrafted-beer.jpg">
-            </div>
         </div>
     </div>
-
     <!-- Second Grid -->
-    <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+    <div class="w3-row-padding w3-light-grey w3-padding-48 w3-container">
         <div class="w3-content">
             <div>
                 <img src="/img/cigarcitybeers.jpg">
