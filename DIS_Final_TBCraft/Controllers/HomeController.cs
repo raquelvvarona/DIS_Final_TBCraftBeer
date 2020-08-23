@@ -49,7 +49,7 @@ namespace DIS_Final_TBCraft.Controllers
             string BEER_API_PATH = BASE_URL + "/breweries?by_city=tampa";
             string breweryapidata = "";
 
-            Breweryapis Breweryapi = null;
+            List<Class1> Breweryapi = null;
 
             httpClient.BaseAddress = new Uri(BEER_API_PATH);
 
@@ -60,12 +60,14 @@ namespace DIS_Final_TBCraft.Controllers
                 if (response.IsSuccessStatusCode)
                 {
                     breweryapidata = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+                    breweryapidata = breweryapidata.Replace("[", "").Replace("]", "");
                 }
 
                 if (!breweryapidata.Equals(""))
                 {
                     // JsonConvert is part of the NewtonSoft.Json Nuget package
-                    Breweryapi = JsonConvert.DeserializeObject<Models.Breweryapis>(breweryapidata);
+                    //Breweryapi = JsonConvert.DeserializeObject<Models.Rootobject>(breweryapidata);
+                    Breweryapi = JsonConvert.DeserializeObject<List<Models.Class1>>(breweryapidata);
                 }
             }
             catch (Exception e)

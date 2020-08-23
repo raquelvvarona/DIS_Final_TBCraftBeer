@@ -1,12 +1,14 @@
 ﻿using DIS_Final_TBCraft.Models;
 
-@model DIS_Final_TBCraft.Models.Breweryapis
-
+@model List<DIS_Final_TBCraft.Models.Rootobject> 
 @{
     ViewData["Title"] = "Brewery API Data";
+
+
+
 }
 
-@foreach (DIS_Final_TBCraft.Models.Breweryapi breweryapi in Model.data)
+@foreach (DIS_Final_TBCraft.Models.Rootobject breweryapi in Model)
 {
-    @(breweryapi.Name)
+    
 }

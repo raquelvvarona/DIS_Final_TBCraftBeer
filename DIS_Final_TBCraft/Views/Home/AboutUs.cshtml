@@ -2,16 +2,54 @@
     ViewBag.Title = "About Us";
     Layout = "_Layout.cshtml";
 }
+<!--
+  Examples to introduce charting using chart.js
+  Author: Manish Agrawal
+  Many examples use or are inspired by
+  http://tobiasahlin.com/blog/chartjs-charts-to-get-you-started/
+-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <meta charset="utf-8" />
     <link rel="stylesheet" href="css\site.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+    @*<script>
+        function getUserInput() {
+
+            var city1 = prompt("What is the first of 4 cities?", "Tampa");
+            var city2 = prompt("What is the second of 4 cities?", "Tampa");
+            var city3 = prompt("What is the third of 4 cities?", "Tampa");
+            var city4 = prompt("What is the fourth of 4 cities?", "Tampa");
+
+            var cities = [city1, city2, city3, city4];
+
+            var ulElement = document.createElement("ul");
+
+            for (var city in cities) {
+
+                var cityListItem = document.createElement("li");
+                var cityListItemtext = document.createTextNode(cities[city]);
+                cityListItem.appendChild(cityListItemtext);
+
+                var listItem = ulElement.appendChild(cityListItem);
+            }
+
+            var bodyNode = document.getElementsByTagName("body")[0];
+            bodyNode.appendChild(ulElement);
+        }
+    </script>*@
 </head>
 
 <body>
     <!-- Header -->
     <header class="g7-chartbanner w3-container w3-center" style="padding:60px 16px">
         <h1 class="w3-margin w3-jumbo" style="color: blanchedalmond">Our Team</h1>
+        <p class="w3-text-white">
+            We are a group of MBAIS students at the University of South Florida. We have built this site to provide
+            beer consumers, from novice all the way  to craft beer afficionado, a location to find information about
+            craft beer and breweries in and around Tampa Bay.
+        </p>
     </header>
 
     <!-- First Grid -->
@@ -95,6 +133,5 @@
             </div>
         </div>
     </div>
-
 </body>
 </html>

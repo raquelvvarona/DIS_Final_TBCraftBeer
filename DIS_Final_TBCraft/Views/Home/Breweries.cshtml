@@ -3,9 +3,18 @@
     Layout = "_Layout.cshtml";
 }
 
-!DOCTYPE html>
-<html lang="en">
+<!--
+  Examples to introduce charting using chart.js
+  Author: Manish Agrawal
+  Many examples use or are inspired by
+  http://tobiasahlin.com/blog/chartjs-charts-to-get-you-started/
+-->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css\site.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
     <link rel="stylesheet" href="css\site.css">
 </head>
 
@@ -16,6 +25,52 @@
     </header>
 
     <!-- Brewery Grid -->
+    <div class="w3-row-padding w3-padding-64 w3-container">
+        <div class="w3-content">
+            <div class="w3-twothird">
+                <h1>Tampa Bay's Favorite Breweries</h1>
+                <h5 class="w3-padding-32">
+                    You asked! We Listened.  See how your favorite Tampa Bay brewery stacks up. 
+                </h5>
+                <canvas id="barchartexample" width="300" height="150"></canvas>
+                <script>
+                    new Chart(document.getElementById("barchartexample"), {
+                        type: 'bar',
+                        data: {
+                            labels: ["3 Daughters", "Angry Chair", "Cigar City",
+                                "Coppertail", "Cycle", "Dunedin",
+                                "Green Bench", "Motorworks", "Rapp",
+                                "TBBC"],
+                            datasets: [
+                                {
+                                    label: "Brewery Votes",
+                                    backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f",
+                                        "#3e95cd", "#8e5ea2", "#3cba9f",
+                                        "#3e95cd", "#8e5ea2", "#3cba9f", "#3e95cd"],
+                                    data: [5478, 5267, 5658,
+                                        5465, 5985, 5258,
+                                        5745, 5569, 5625, 5536]
+                                }
+                            ]
+                        },
+                        options: {
+                            legend: { display: false },
+                            title: {
+                                display: true,
+                                text: 'Local Brewery Ratings'
+                            }
+                        }
+                    });
+                </script>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
     <div class="w3-row-padding w3-padding-64 w3-container">
         <div class="w3-content">
             <div class="g7-row">
